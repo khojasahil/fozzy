@@ -2,7 +2,11 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Expense Tracker</title>
+	
+	<!--ceci reajuste la page au mobile ou au device-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+	<title>Expense Tracker</title>
 	<link href="styles/style.css" rel="stylesheet" type="text/css">
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -10,12 +14,53 @@
 	<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
   </head>
   <body>
-	<h1> Simple expense tracker </h1>
-	<a href="https://www.mozilla.org/en-US/about/manifesto/"> The mozilla manif </a>
+  
+  <div class="mdl-layout mdl-js-layout">
+  
+  <!-- ceci permet d'avoir un header avec colones -->
+  
+	<header class="mdl-layout__header">
+	
+		<!--Icone du header-->
+		<div class="mdl-layout-icon"></div>
+		
+		<!--contenu du Row du header-->	
+		<div class="mdl-layout__header-row">
+		<span class="mdl-layout__title">Simple Expense tracker</span>
+		<!--aligner le header navigation link a droite-->
+		<div class="mdl-layout-spacer"></div>
+		<!--contient les liens de navigation du header-->
+		<nav class="mdl-navigation">
+        <a class="mdl-navigation__link" href="#">Nav link 1</a>
+        <a class="mdl-navigation__link" href="#">Nav link 2</a>
+        <a class="mdl-navigation__link" href="#">Nav link 3</a>
+      </nav>
+		</div>
+	
+	</header>
+	<!--drawer pour les mobile-->
+	<div class="mdl-layout__drawer">
+		<span class="mdl-layout__title">Simple Layout</span>
+		<nav class="mdl-navigation">
+			<a class="mdl-navigation__link" href="#">Nav link 1</a>
+			<a class="mdl-navigation__link" href="#">Nav link 2</a>
+			<a class="mdl-navigation__link" href="#">Nav link 3</a>
+		</nav>
+	</div>
+	 <main class="mdl-layout__content">
 	<p> Here is the <strong>data</strong> it takes</p>
 		<ol>
 		<li>Expense type</li>
-		<li>Amount in CAD </li>
+		<li>
+			<!-- Numeric Textfield with Floating Label -->
+			<form action="#">
+				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+				<input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="Amount">
+				<label class="mdl-textfield__label" for="Amount">Amount</label>
+				<span class="mdl-textfield__error">Input is not a number!</span>
+				</div>
+			</form>
+		</li>
 		<li>Localisation </li>
 		<li>Tags</li>
 		<li>Date</li>
@@ -27,8 +72,13 @@
 	<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
 	  Button
 	</button>
+  </main>
 	
-	<button>Change user</button>
+  </div>
+  
+
+
+	
 	<script src="scripts/main.js"></script>
 	
   </body>
